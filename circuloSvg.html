@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body {
+                display: flex;
+                gap: 20px;
+                background-color:  #575a59;
+            }
+
+            circle{
+                fill: none;
+                stroke: var(--color);
+                stroke-width: 20;
+                stroke-linecap: round;
+                stroke-dasharray: 100 100;
+                transform: rotate(-90deg);
+                transform-origin: 50%;
+                
+            }
+
+            .porcentajes:hover{
+                -webkit-box-reflect: below 1px linear-gradient(transparent, #0008);
+                line-height: 0.70em;
+                outline: none;
+            }
+
+            circle:nth-child(2) {
+                stroke:#42d0de;
+                stroke-dasharray: 0 20;
+                animation: rellenar 2.0s linear forwards;
+                
+            }
+
+            .porcentajes {
+                position: relative;
+                margin-left: 20px;
+                margin-top: 20px;
+                animation: animate 5s linear infinite;
+            }
+            .porcentajes span {
+                position: absolute;
+                top: 0%;
+                left: 0%;
+                bottom: 0%;
+                right: 0%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font: 25px/1em verdana;
+                color: #ffffff;
+            }
+            @keyframes rellenar {
+                to{
+                    stroke-dasharray: var(--porcentaje) 10;
+                }
+            }
+
+            @keyframes animate {
+                0%
+                {
+                    color: #0e3742;
+                    box-shadow: none;
+                }
+                100%
+                {
+                    color: #fff;
+                    text-shadow: 0 0 10px #03bcf4,
+                    0 0 10px #03bcf4,
+                    0 0 10px #03bcf4,
+                    0 0 10px #03bcf4,
+                    0 0 10px #03bcf4,
+                    0 0 10px #03bcf4;
+                }
+            }
+
+        </style>
+    </head>
+    <body>
+
+        <div class="porcentajes" style="--porcentaje: 20; --color:   #bfbfbf">
+            <svg width="150" height="150">
+                <circle r="65" cx="50%" cy="50%" pathlength="100" id="progreso" class="progreso"/>
+                <circle r="65" cx="50%" cy="50%" pathlength="100" id="progreso" class="progreso"/>
+            </svg>
+            <span id="porcentaje" class="porcentaje"></span>
+        </div>
+        <script>
+            const progreso=document.getElementById('progreso')
+            let porcentaje=document.getElementById('porcentaje')
+            let cantidad1=0;
+            let cantidad2=630;
+
+            let tiempo=setInterval(() => {
+                cantidad1+=1;
+                let value=Math.ceil(cantidad2-=6.3)
+                porcentaje.textContent=cantidad1+'%'
+                progreso.style.strokeDashoffset='$(value)'
+
+                if(cantidad1===100){
+                    clearInterval(tiempo)
+                }
+            }, 20);
+        </script>
+        
+    </body>
+</html>

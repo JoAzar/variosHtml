@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body {
+                background: rgb(73, 72, 72);
+            }
+            .cuadrote{
+                border-radius: 4%;
+            background: rgb(255,212,168);
+            background: linear-gradient(90deg, rgba(255,212,168,1) 48%, rgba(252,252,255,1) 100%);
+            width: 180px; }
+            .cuadro
+            {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-around;
+                width: 180px;
+            }
+
+            .color1{ background-color: rgb(97, 7, 7); color:rgb(97, 7, 7);  animation: saltarArriba 1.5s ease-in-out infinite; font-weight: bolder;}
+            .color1:hover{ background: rgba(0,0,0,0.001);}
+            .color2{background-color: #355; color: #355; animation: saltarAbajo 1.5s ease-in-out infinite; font-weight: bolder; }
+            .color2:hover{ background: rgba(0,0,0,0.001);}
+            .color3{background-color: #223; color: #223; animation: saltarArriba 1.5s ease-in-out infinite; font-weight: bolder;}
+            .color3:hover{ background: rgba(0,0,0,0.001);}
+            .color4{background-color: rgb(127, 196, 223); color: rgb(127, 196, 223); width: 20px; animation: saltarAbajo 1.5s ease-in-out infinite;}
+            .color4:hover{background: rgba(0,0,0,0.001);}
+
+            .frase{
+                color: rgb(253, 253, 253);
+                font-family: fantasy;
+                font-size: smaller;
+                text-align: center;
+                font-weight: bolder;
+                text-shadow: .9px .9px 0 hsl(0, 0%, 10%);
+                transition: all 0.57s;               
+            }
+            .frase:hover{
+                font-size: 20px;
+            }
+            
+
+            @keyframes saltarArriba {
+                0% {transform: translateY(0);}
+                20% {transform: translateY(-1em);}
+                40% {transform: translateY(0.5em);}
+                60% {transform: translateY(-0.25em);}
+                70% {transform: translateY(0);}
+            }
+            @keyframes saltarAbajo {
+                0% {transform: translateY(0);}
+                20% {transform: translateY(1em);}
+                40% {transform: translateY(-0.5em);}
+                60% {transform: translateY(0.25em);}
+                70% {transform: translateY(0);}
+            }
+
+        </style>
+    <body>  
+
+        <div class="cuadrote">
+            <div class="cuadro">
+                <p class="color1">Let</p>
+                <p class="color2">Go</p>
+                <p class="color3">Kla</p>
+                <p class="color4">K</p> 
+            </div>
+            <div class="frase">
+                Hecho con Klak
+            </div>
+        </div>
+    </body>
+
+    </header>   
+</html>
